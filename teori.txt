@@ -1,0 +1,103 @@
+Nama:izmi baihaqi Anur
+Kelas:2D
+NIM:21090013
+
+1. data nilai ={7,45,1,255,87,45,3,9}
+    length= 8
+    urutan saat p = 3?
+
+    pivot = 9
+
+    #i = 0-1 = -1     j=0
+    if(this.data[j] <pivot)
+    if(7 < 9)
+    i = -1 +1 =0
+    t = this.data[i]  t=7
+    this.data[0] = this.data[0]
+     this.data[0] = t                                       {7,45,1,255,87,45,3,9}
+
+    #i = 0-1 = -1     j=1
+    if(this.data[j] < pivot)
+    if (45 < 9)
+    t=this.data[i+1]  t=this.data[1]
+    this data[1]=9
+    9=t                                                     {7,9,1,255,87,45,3,45}
+
+    ##p =1
+    pivot=7
+
+    #i =0-1 = -1    j=0
+    if(7 < 7)                                               {7,9,1,255,87,45,3,45}
+    i = 0 +1 =1
+
+    #i = 1  j=2
+    if(7 < 7)
+    i = 1 + 1 =2                                            {7,9,1,255,87,45,3,45}
+
+    #i =2 j=3
+    if(255< 7)
+    t =this.data[i+1] t=255
+    this.data(3) = this.data[end]
+    this.data[end] = t
+    45= t                                                   {7,9,1,45,87,45,3,255}
+
+    #p =3
+    pivot =255
+
+    #i =1 j=0
+    if(7 <255)
+    i = 1 + 1=2                                             {7,9,1,45,87,45,3,255}
+
+    #i =2 j= 1
+    if(9 < 255)
+    i = 1 + 1=3
+
+2. public class BinarySearchTree {
+       public Node search(Node root, int key){
+           if (root==null || root.key==key)
+               return root;
+           if (root.key < key)
+               return search(root.right, key);
+           return search(root.left, key);
+       }
+
+       private static Node insert(Node node, int key){
+           if (node == null){
+               Node temp = new Node(key);
+               return temp;
+           }
+
+           if (key < node.key){
+               node.left = insert(node.left, key);
+           }
+           else if (key > node.key){
+               node.right = insert(node.right, key);
+           }
+
+           return node;
+       }
+
+       private static void inorder(Node root){
+           if (root != null){
+               inorder(root.left);
+               System.out.println(" " + root.key);
+               inorder(root.right);
+           }
+       }
+       public static void main(String[] args) {
+           Node root = null;
+           root = insert(root, 50);
+           insert(root, 30);
+           insert(root, 20);
+           insert(root, 40);
+           insert(root, 70);
+           insert(root, 60);
+           insert(root, 80);
+           inorder(root);
+       }
+   }
+
+
+
+
+
